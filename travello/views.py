@@ -9,3 +9,8 @@ def index(request):
 
     return render(request, 'index.html', {'Dests': dests})
 
+
+def destination(request, name):
+    dest = Destination.objects.get(name=name)
+    context = {'dest':dest}
+    return render(request, 'destination.html', context)

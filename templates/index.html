@@ -100,7 +100,7 @@
 	</div>
 
 	<!-- Home -->
-
+	{% block content %}
 	<div class="home">
 
 		<!-- Home Slider -->
@@ -166,9 +166,9 @@
 			</div>
 		</div>
 	</div>
-
+	{% endblock content %}
 	<!-- Search -->
-
+	
 	<div class="home_search">
 		<div class="container">
 			<div class="row">
@@ -191,7 +191,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<!-- Intro -->
 
 	<div class="intro">
@@ -243,7 +243,7 @@
 	</div>
 
 	<!-- Destinations -->
-
+	
 	<div class="destinations" id="destinations">
 		<div class="container">
 			<div class="row">
@@ -268,7 +268,13 @@
 
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a href="destinations_details.html">{{dest.name}}</a></div>
+								<div class="destination_title">
+									{% if user.is_authenticated %}
+									<a href="{% url 'destination' dest.name %}">{{dest.name}}</a>
+									{% else %}
+									<a href="accounts/login">{{dest.name}}</a>
+									{% endif %}
+								</div>
 								<div class="destination_subtitle"><p>{{dest.desc}}</p></div>
 								<div class="destination_price">From ${{dest.price}}</div>
 							</div>
@@ -280,7 +286,7 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<!-- Testimonials -->
 
 	<div class="testimonials" id="testimonials">

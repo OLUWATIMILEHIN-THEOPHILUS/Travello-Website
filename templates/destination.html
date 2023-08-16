@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUR DESTINATION</title>
+    <style>
+        .dest_data {
+            margin: auto;
+            padding: auto;
+            padding-top: 100px;
+            text-align: center;
+            background-color: grey;
+            color: wheat;
+        }
+        .dest_data h3 {
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    {% extends 'index.html' %}
+    {% block content %}
+
+    <div class="dest_data">
+        <h1>Welcome to {{dest.name}}!</h1>
+        <h3>{{dest.desc}}</h3>
+        <img src="{{dest.img.url}}" alt="">
+    </div>
+
+    {% endblock %}
+    
+</body>
+</html>

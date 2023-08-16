@@ -31,10 +31,10 @@ def register(request):
         else:
             messages.info(request,'password not matching....')
             return redirect('register')
-        return redirect('/travello')       
+        return redirect('/')       
 
     else:
-        return render(request, 'register.html')
+        return render(request, 'travello/register.html')
 
 
 #Functions for LOGIN
@@ -47,17 +47,17 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('/travello')
+            return redirect('/')
         else:
             messages.info(request, 'invalid login details')
             return redirect('login')
     else:
-        return render(request, 'login.html')
+        return render(request, 'travello/login.html')
 
 
 #Functions for LOGOUT
 
 def logout(request):
     auth.logout(request)
-    return redirect('/travello')
+    return redirect('/')
 
