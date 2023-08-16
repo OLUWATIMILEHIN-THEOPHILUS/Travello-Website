@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     # path('', include('calc.urls')),          #this line is for the calc(addition) app.
-    path('travello', include('travello.urls')),  #this is for the travello(travelling website) app.
+    path('', include('travello.urls')),  #this is for the travello(travelling website) app.
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls'))   #I added / (to accounts/) cos it will be running on the travello app
 ]
